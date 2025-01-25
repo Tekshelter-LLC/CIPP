@@ -267,7 +267,6 @@ export const CIPPTableToptoolbar = ({
                   } else if (data && !getRequestData.isFetched) {
                     //do nothing because data was sent native.
                   } else if (getRequestData) {
-                    console.log(getRequestData);
                     getRequestData.refetch();
                   }
                 }}
@@ -460,7 +459,7 @@ export const CIPPTableToptoolbar = ({
                   }}
                 >
                   {actions
-                    ?.filter((action) => !action.link)
+                    ?.filter((action) => !action.link && !action?.hideBulk)
                     .map((action, index) => (
                       <MenuItem
                         key={index}
